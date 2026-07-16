@@ -1,0 +1,36 @@
+# Core scientific computing
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+
+# Machine Learning
+scikit-learn>=1.4
+
+# Deep Learning
+torch>=2.2
+torchvision>=0.17
+
+# Biomedical Data Analysis
+scanpy>=1.10
+anndata>=0.10
+
+# Dimensionality Reduction and Visualization
+umap-learn>=0.5
+matplotlib>=3.8
+seaborn>=0.13
+
+# Configuration Management
+pyyaml>=6.0
+
+# Experiment Tracking and Reproducibility
+tqdm>=4.66
+
+# Statistical Analysis
+lifelines>=0.28
+
+# Testing
+pytest>=8.0
+
+# Code Quality
+black>=24.0
+flake8>=7.0
