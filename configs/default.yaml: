@@ -1,0 +1,21 @@
+# Default configuration for OmniLatent experiments
+project:
+  name: OmniLatent
+  reproducibility:
+    seed: 42
+
+model:
+  architecture: multimodal_autoencoder
+  latent_dim: 128
+
+training:
+  epochs: 100
+  batch_size: 64
+  learning_rate: 0.001
+  optimizer: adam
+
+evaluation:
+  methods:
+    - umap
+    - clustering
+    - survival_analysis
