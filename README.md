@@ -7,10 +7,10 @@
 <br>
 
 <p>
-<img src="https://img.shields.io/badge/Field-Biomedical%20AI-2C3E50?style=flat-square">
-<img src="https://img.shields.io/badge/Method-Multimodal%20Learning-34495E?style=flat-square">
-<img src="https://img.shields.io/badge/Focus-Interpretability-5D6D7E?style=flat-square">
-<img src="https://img.shields.io/badge/License-MIT-7F8C8D?style=flat-square">
+<img src="https://img.shields.io/badge/Field-Biomedical%20AI-0077B6?style=for-the-badge&logo=biolink">
+<img src="https://img.shields.io/badge/Method-Multimodal%20Learning-6C5CE7?style=for-the-badge&logo=pytorch">
+<img src="https://img.shields.io/badge/Focus-Interpretability-00A896?style=for-the-badge&logo=target">
+<img src="https://img.shields.io/badge/License-MIT-F39C12?style=for-the-badge">
 </p>
 
 <br>
