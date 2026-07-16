@@ -1,0 +1,67 @@
+project:
+  name: OmniLatent
+  cancer_type: BRCA
+  seed: 42
+
+
+data:
+  dataset: TCGA
+  cancer: BRCA
+
+  modalities:
+    - rna
+    - clinical
+    - mutation
+
+  preprocessing:
+    normalize_rna: true
+    filter_low_expression: true
+
+
+model:
+
+  architecture: multimodal_autoencoder
+
+  latent_dim: 128
+
+  encoders:
+
+    rna:
+      type: mlp
+      hidden_dims:
+        - 512
+        - 256
+
+    clinical:
+      type: mlp
+      hidden_dims:
+        - 64
+        - 32
+
+    mutation:
+      type: mlp
+      hidden_dims:
+        - 128
+        - 64
+
+
+training:
+
+  epochs: 100
+
+  batch_size: 64
+
+  learning_rate: 0.001
+
+  optimizer: adam
+
+
+evaluation:
+
+  embedding_dim: 128
+
+  methods:
+    - umap
+    - clustering
+    - survival_analysis
+    - subtype_analysis
