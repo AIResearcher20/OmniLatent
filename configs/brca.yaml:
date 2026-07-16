@@ -1,0 +1,11 @@
+# BRCA-specific configuration
+project:
+  cancer_type: BRCA
+
+data:
+  dataset: TCGA
+  cancer: BRCA
+  modalities:
+    - rna
+    - clinical
+    - mutation
