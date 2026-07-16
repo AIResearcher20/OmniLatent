@@ -1,13 +1,25 @@
-OmniLatent
+<div align="center">
 
-![Framework](https://img.shields.io/badge/Framework-OmniLatent-darkgreen)
-![Biomedical AI](https://img.shields.io/badge/Biomedical-AI-blueviolet)
-![Multimodal](https://img.shields.io/badge/Multimodal-Learning-red)
-![Interpretability](https://img.shields.io/badge/Interpretable-Yes-brightgreen)
-![Generalization](https://img.shields.io/badge/Cross--Cancer-Evaluation-critical)
+# **OmniLatent**
 
-A Modular Framework for Generalizable Multimodal Representation Learning from Biomedical Data
+### A Generalizable Multimodal Representation Learning Framework for Biomedical AI
 
+<br>
+
+<p>
+<img src="https://img.shields.io/badge/Field-Biomedical%20AI-2C3E50?style=flat-square">
+<img src="https://img.shields.io/badge/Method-Multimodal%20Learning-34495E?style=flat-square">
+<img src="https://img.shields.io/badge/Focus-Interpretability-5D6D7E?style=flat-square">
+<img src="https://img.shields.io/badge/License-MIT-7F8C8D?style=flat-square">
+</p>
+
+<br>
+
+<i>
+A modular framework for interpretable and generalizable multimodal representation learning from heterogeneous biomedical data.
+</i>
+
+</div>
 ---
 
 Overview
