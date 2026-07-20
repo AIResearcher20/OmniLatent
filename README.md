@@ -125,6 +125,98 @@ Current phase:
 Phase 1 — Data Acquisition and Research Infrastructure
 
 ---
+## Quick Start
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AIResearcher20/OmniLatent.git
+cd OmniLatent
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Configuration
+
+Experiments are configured using YAML configuration files:
+
+```
+configs/
+├── default.yaml
+└── brca.yaml
+```
+
+Example training command:
+
+```bash
+python train.py --config configs/brca.yaml
+```
+
+---
+
+### Model Availability
+
+The pretrained OmniLatent TCGA-BRCA model is available on Hugging Face:
+
+https://huggingface.co/Sepideh2027/OmniLatent-TCGA-BRCA-model
+
+Available files:
+
+- `best_model.pt` — trained OmniLatent autoencoder weights
+- `model_config.json` — model architecture configuration
+
+---
+
+### Dataset Availability
+
+The processed TCGA-BRCA dataset used in OmniLatent experiments is available on Hugging Face:
+
+https://huggingface.co/datasets/Sepideh2027/OmniLatent-TCGA-BRCA
+
+Dataset structure:
+
+```
+OmniLatent-TCGA-BRCA/
+├── raw/
+├── processed/
+├── DATASET_VERSION.txt
+├── dataset_info.json
+└── README.md
+```
+
+---
+
+### Latent Representation Extraction
+
+The trained encoder generates compact latent representations.
+
+Input:
+
+```
+(samples, 23375)
+```
+
+Output:
+
+```
+(samples, 128)
+```
+
+The generated embeddings can be used for:
+
+- latent space visualization
+- clustering analysis
+- downstream biomedical studies
+- representation learning research
+---
 
 ## Model Availability
 
