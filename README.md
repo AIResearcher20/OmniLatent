@@ -126,6 +126,20 @@ Phase 1 — Data Acquisition and Research Infrastructure
 
 ---
 
+## Model Availability
+
+The pretrained OmniLatent TCGA-BRCA model is available on Hugging Face:
+
+https://huggingface.co/Sepideh2027/OmniLatent-TCGA-BRCA-model
+
+Available files:
+
+- `best_model.pt` — trained OmniLatent autoencoder weights
+- `model_config.json` — model architecture configuration
+
+The model can be used for latent representation extraction and downstream biomedical analysis.
+---
+
 License
 
 MIT License
