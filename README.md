@@ -64,6 +64,26 @@ The project is motivated by the hypothesis that **heterogeneous biomedical obser
 
 ---
 
+
+---
+
+## 🚧 Project Status
+
+OmniLatent is an actively developed research project.
+
+The current repository presents **Version 1.0**, which focuses on validating latent representation learning from TCGA-BRCA RNA-seq data using a deep autoencoder architecture. The experiments reported in this repository have been completed and form the foundation of the project.
+
+Current development is focused on extending the framework toward its next research milestones, including:
+
+- 🔬 Integration of multimodal biomedical data (clinical variables and somatic mutations)
+- 🔬 Cross-cancer validation on independent TCGA cohorts (e.g., LUAD, KIRC)
+- 🔬 Biological interpretation of learned representations
+- 🔬 Comparative evaluation against additional baseline methods
+- 🔬 Manuscript preparation for peer-reviewed publication
+
+The repository will continue to be updated as these research components are completed.
+----
+
 ## 🔬 Overview
 
 ### The Problem
