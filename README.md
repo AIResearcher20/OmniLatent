@@ -139,6 +139,22 @@ Available files:
 
 The model can be used for latent representation extraction and downstream biomedical analysis.
 ---
+## Dataset Availability
+
+The processed TCGA-BRCA dataset used in OmniLatent experiments is available on Hugging Face:
+
+Dataset repository:
+
+https://huggingface.co/datasets/Sepideh2027/OmniLatent-TCGA-BRCA
+
+Dataset structure:
+
+OmniLatent-TCGA-BRCA/ ├── raw/ ├── processed/ ├── DATASET_VERSION.txt ├── dataset_info.json └── README.md
+
+The dataset is derived from TCGA-BRCA and follows the original TCGA/GDC data usage policies.
+
+The released processed data can be used for reproducing OmniLatent representation learning experiments.
+---
 
 License
 
