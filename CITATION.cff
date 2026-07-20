@@ -1,41 +1,21 @@
 cff-version: 1.2.0
-
-message: "If you use OmniLatent in your research, please cite this repository."
-
-title: "OmniLatent: A Generalizable Multimodal Representation Learning Framework for Biomedical Discovery"
-
+title: "OmniLatent: A Generalizable Multimodal Representation Learning Framework for Biomedical AI"
+message: "If you use this software, please cite this work."
 type: software
 
 authors:
-  - family-names: "Moafi"
-    given-names: "Sepideh"
-    affiliation: "Independent Researcher"
-
-url: "https://github.com/AIResearcher20/OmniLatent"
-
-repository-code: "https://github.com/AIResearcher20/OmniLatent"
-
-abstract: >
-  OmniLatent is an open-source research framework for multimodal biomedical
-  representation learning. The framework integrates heterogeneous biomedical
-  data modalities, including molecular and clinical information, into unified
-  latent representations for downstream biological and clinical analyses.
-  The project focuses on reproducible, interpretable, and generalizable
-  representation learning approaches for biomedical discovery.
-
-keywords:
-  - multimodal representation learning
-  - biomedical AI
-  - cancer genomics
-  - TCGA
-  - deep learning
-  - biological interpretability
-  - cross-modal alignment
-  - open-source scientific software
-  - reproducible research
-
-license: "MIT"
+  - family-names: "AIResearcher20"
+    given-names: "OmniLatent Team"
 
 version: "0.1.0"
 
-date-released: "2026-07-16"
+date-released: "2026-07-20"
+
+repository-code: "https://github.com/AIResearcher20/OmniLatent"
+
+url: "https://github.com/AIResearcher20/OmniLatent"
+
+abstract: >
+  OmniLatent is a modular framework for learning robust,
+  interpretable, and transferable latent representations
+  from heterogeneous biomedical data.
