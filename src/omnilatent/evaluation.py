@@ -1,3 +1,10 @@
+"""
+OmniLatent — Latent Embedding Extraction
+
+Author: Vania Karimi
+Year: 2025
+License: MIT
+"""
 import torch
 import torch.nn as nn
 
