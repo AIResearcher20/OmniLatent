@@ -482,7 +482,7 @@ Available Files:
 · model.safetensors — SafeTensors format
 · config.json — Model configuration
 
-Dataset: Sepideh2027/OmniLatent-TCGA-BRCA
+Dataset: Sepideh2027/biolatent-brca-tcga
 
 Load Pretrained Model
 
