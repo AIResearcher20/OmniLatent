@@ -19,6 +19,12 @@
 
 <br>
 
+**Year:** 2025–Present  
+**License:** MIT  
+**Author:** Sepideh Moafi 
+---
+
+
 **OmniLatent** is a research-oriented framework for learning robust, interpretable, and transferable latent representations from high-dimensional biomedical data — with a focus on RNA-seq expression profiles.
 
 The project is motivated by the hypothesis that **heterogeneous biomedical observations can be mapped into shared latent spaces** that capture underlying biological structure, enabling downstream analyses and future evaluation of cross-cancer generalization.
@@ -603,10 +609,10 @@ This direction is related to recent biomedical foundation models and large-scale
 📝 Citation
 
 ```bibtex
-@misc{omnilatent2026,
-  author = {Sepideh2027},
+@misc{Moafi2025,
+  author = {Moafi , Sepideh},
   title = {OmniLatent: A Generalizable Latent Representation Framework for Biomedical Data},
-  year = {2026},
+  year = {2025},
   publisher = {GitHub},
   url = {https://github.com/AIResearcher20/OmniLatent}
 }
