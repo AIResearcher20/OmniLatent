@@ -1,3 +1,11 @@
+"""
+OmniLatent — Training Script
+
+Author: Sepideh Moafi 
+Year: 2025
+License: MIT
+"""
+
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
@@ -6,135 +14,116 @@ from config import *
 from dataloader import train_loader, val_loader
 from model import OmniLatentAutoEncoder
 
+
 def train():
+    model = OmniLatentAutoEncoder(
+        input_dim=INPUT_DIM,
+        latent_dim=LATENT_DIM
+    ).to(DEVICE)
 
-model = OmniLatentAutoEncoder(  
-    input_dim=INPUT_DIM,  
-    latent_dim=LATENT_DIM  
-).to(DEVICE)  
+    criterion = nn.MSELoss()
 
-criterion = nn.MSELoss()  
+    optimizer = torch.optim.Adam(
+        model.parameters(),
+        lr=LEARNING_RATE
+    )
 
-optimizer = torch.optim.Adam(  
-    model.parameters(),  
-    lr=LEARNING_RATE  
-)  
+    train_losses = []
+    val_losses = []
 
-train_losses = []  
-val_losses = []  
+    best_val = float("inf")
 
-best_val = float("inf")  
+    for epoch in range(EPOCHS):
 
-for epoch in range(EPOCHS):  
+        #########################
+        # Train
+        #########################
+        model.train()
 
-    #########################  
-    # Train  
-    #########################  
+        running_loss = 0
 
-    model.train()  
+        for x in train_loader:
+            x = x.to(DEVICE)
 
-    running_loss = 0  
+            optimizer.zero_grad()
 
-    for x in train_loader:  
+            recon, latent = model(x)
 
-        x = x.to(DEVICE)  
+            loss = criterion(recon, x)
 
-        optimizer.zero_grad()  
+            loss.backward()
 
-        recon, latent = model(x)  
+            optimizer.step()
 
-        loss = criterion(recon, x)  
+            running_loss += loss.item()
 
-        loss.backward()  
+        train_loss = running_loss / len(train_loader)
 
-        optimizer.step()  
+        #########################
+        # Validation
+        #########################
+        model.eval()
 
-        running_loss += loss.item()  
+        running_loss = 0
 
-    train_loss = running_loss / len(train_loader)  
+        with torch.no_grad():
+            for x in val_loader:
+                x = x.to(DEVICE)
 
-    #########################  
-    # Validation  
-    #########################  
+                recon, latent = model(x)
 
-    model.eval()  
+                loss = criterion(recon, x)
 
-    running_loss = 0  
+                running_loss += loss.item()
 
-    with torch.no_grad():  
+        val_loss = running_loss / len(val_loader)
 
-        for x in val_loader:  
+        train_losses.append(train_loss)
+        val_losses.append(val_loss)
 
-            x = x.to(DEVICE)  
+        print(
+            f"Epoch {epoch+1}/{EPOCHS} | "
+            f"Train {train_loss:.6f} | "
+            f"Val {val_loss:.6f}"
+        )
 
-            recon, latent = model(x)  
+        #########################
+        # Save best model
+        #########################
+        if val_loss < best_val:
+            best_val = val_loss
 
-            loss = criterion(recon, x)  
+            torch.save(
+                model.state_dict(),
+                CHECKPOINT_DIR / "best_model.pt"
+            )
 
-            running_loss += loss.item()  
+    #########################
+    # Plot
+    #########################
+    plt.figure(figsize=(6, 4))
 
-    val_loss = running_loss / len(val_loader)  
+    plt.plot(train_losses, label="Train")
+    plt.plot(val_losses, label="Validation")
 
-    train_losses.append(train_loss)  
-    val_losses.append(val_loss)  
+    plt.xlabel("Epoch")
+    plt.ylabel("MSE Loss")
 
-    print(  
-        f"Epoch {epoch+1}/{EPOCHS} | "  
-        f"Train {train_loss:.6f} | "  
-        f"Val {val_loss:.6f}"  
-    )  
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
 
-    #########################  
-    # Save best model  
-    #########################  
+    plt.savefig(OUTPUT_DIR / "loss_curve.png")
+    plt.show()
 
-    if val_loss < best_val:  
+    print()
+    print("Best validation loss:", best_val)
+    print("Model saved to:")
+    print(CHECKPOINT_DIR / "best_model.pt")
+    print()
+    print("Loss curve saved to:")
+    print(OUTPUT_DIR / "loss_curve.png")
 
-        best_val = val_loss  
 
-        torch.save(  
-            model.state_dict(),  
-            CHECKPOINT_DIR / "best_model.pt"  
-        )  
-
-#########################  
-# Plot  
-#########################  
-
-plt.figure(figsize=(6,4))  
-
-plt.plot(train_losses,label="Train")  
-
-plt.plot(val_losses,label="Validation")  
-
-plt.xlabel("Epoch")  
-
-plt.ylabel("MSE Loss")  
-
-plt.legend()  
-
-plt.grid(True)  
-
-plt.tight_layout()  
-
-plt.savefig(OUTPUT_DIR / "loss_curve.png")  
-
-plt.show()  
-
-print()  
-
-print("Best validation loss:", best_val)  
-
-print("Model saved to:")  
-
-print(CHECKPOINT_DIR / "best_model.pt")  
-
-print()  
-
-print("Loss curve saved to:")  
-
-print(OUTPUT_DIR / "loss_curve.png")
-
-if name == "main":
-
-train()
+if __name__ == "__main__":
+    train()
