@@ -1,8 +1,10 @@
+---
 OmniLatent — Autoencoder Model
 
 Author: Sepideh Moafi 
 Year: 2025
 License: MIT
+---
 
 import torch
 import torch.nn as nn
